@@ -1,0 +1,7 @@
+{
+  "name": "beerstagram",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
