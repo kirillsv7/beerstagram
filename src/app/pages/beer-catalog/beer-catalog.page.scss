@@ -2,9 +2,8 @@
     margin-left: 10px;
 }
 
-ion-button.custom-button {
-    // No me coge el color de fondo
-    // background-color: #E1523D;
+ion-button {
+    --background: #E1523D;
     margin-left: 20px;
 }
 
