@@ -1,22 +1,26 @@
-.margen {
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.mr-10 {
     margin-left: 10px;
 }
 
-ion-button.custom-button {
-    // No me coge el color de fondo
-    // background-color: #E1523D;
-    margin-left: 20px;
+ion-button {
+    --background: #E1523D;
+    margin: 20px;
+    text-transform: none;
 }
 
-.imagen {
+.image {
     width: 300px;
 }
 
 footer {
-    display: block;
     background-color: #003547;
+    color: white;
     text-align: center;
-    padding: 1px;
-    margin-top: 100%;
-    width: 100%;
+    padding: 5px;
 }
