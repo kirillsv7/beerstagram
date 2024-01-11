@@ -11,10 +11,12 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class AddBeerPage implements OnInit {
+  volume: string = 'cl';
 
   constructor() { }
 
   ngOnInit() {
   }
+  
 
 }
