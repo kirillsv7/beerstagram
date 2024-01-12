@@ -39,8 +39,11 @@ ion-item {
 
   .prueba
   {
+    display: flex;
     margin: auto;
     margin-top: 20px;
     display: flex;
+    text-align: center;
     justify-content: center;
+    align-items: center;
   }
