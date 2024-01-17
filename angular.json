@@ -30,6 +30,7 @@
                 "input": "src/assets",
                 "output": "assets"
               },
+              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
             "styles": ["src/theme/variables.scss", "src/styles/global.scss"],
@@ -108,6 +109,7 @@
                 "input": "src/assets",
                 "output": "assets"
               },
+              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
             "styles": ["src/theme/variables.scss", "src/styles/global.scss"],
