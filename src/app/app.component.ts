@@ -26,7 +26,9 @@ import {
   beerOutline,
   beerSharp,
   addOutline,
-  addSharp
+  addSharp,
+  menuOutline,
+
 } from 'ionicons/icons';
 
 @Component({
@@ -49,7 +51,8 @@ import {
     IonItem,
     IonIcon,
     IonLabel,
-    IonRouterOutlet
+    IonRouterOutlet,
+    
   ],
 })
 export class AppComponent {
@@ -73,6 +76,7 @@ export class AppComponent {
       beerSharp,
       addOutline,
       addSharp,
+      menuOutline
     });
   }
 }
