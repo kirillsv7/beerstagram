@@ -27,11 +27,12 @@ ion-item {
     text-align: start;
   }
 
+
   /* ion-button {
     --border-color: #fff;
     --border-width: 2px;
     --border-radius: 6px;
-   margin: auto;
+    margin: auto;
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -46,4 +47,21 @@ ion-item {
     text-align: center;
     justify-content: center;
     align-items: center;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  ion-button {
+    --background: #E1523D;
+  }
+
+  footer {
+    background-color: #003547;
+    color: white;
+    text-align: center;
+    padding: 5px;
   }
