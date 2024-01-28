@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { menuOutline } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
+import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-daily-summary',
   templateUrl: './daily-summary.page.html',
   styleUrls: ['./daily-summary.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption]
 })
 export class DailySummaryPage  implements OnInit{
 
@@ -16,6 +18,9 @@ export class DailySummaryPage  implements OnInit{
   }
 
   ngOnInit() {
+    addIcons({
+      menuOutline
+    });
   }
   
 

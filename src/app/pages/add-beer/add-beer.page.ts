@@ -11,7 +11,7 @@ import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonM
   templateUrl: './add-beer.page.html',
   styleUrls: ['./add-beer.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader,IonToolbar,IonMenuButton,IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption]
+  imports: [CommonModule, FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption]
 })
 export class AddBeerPage implements OnInit {
   volume: string = 'cl';
