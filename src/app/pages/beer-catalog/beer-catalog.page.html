@@ -6,31 +6,36 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Catálogo de cervezas</ion-title>
+        <ion-title>{{ "BEERCATALOGTITLE" | translate }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <!-- <ion-title size="large">beer-catalog</ion-title> -->
-      </ion-toolbar>
-    </ion-header>
+    <!-- Selector de idioma -->
+    <ion-item>
+      <ion-select
+            label="Idioma"
+            placeholder="Idioma"
+            (ionChange)="changeLanguage($event)"
+            [value]="currentLang">
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="ca">Català</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-    <ion-button>+ Añadir nueva cerveza</ion-button>
-    <br><br>
+    <br>
 
     <!-- Por ahora lo pongo con una imagen -->
     <img class="image mr" src="assets/img/cervezas.png" alt="cervezas">
 
-    <!-- <div class="container">
-      <p>Aquí colocaremos catálogo de cervezas que hemos ido añadiendo.</p>
-      <p>Diseño: <a href="https://www.figma.com/file/4tAW2txIqmRbdPBHyq02lU/Beerstagram?type=design&node-id=1-34&mode=design&t=VWPzGyJKIu9wiES1-4" target="_blank">link</a></p>
-    </div> -->
+    <br>
+
+    <ion-button shape="round">{{ "ADDBEERBUTTON" | translate }}</ion-button>
   </div>
 
   <footer>
     <h1>545/2100 kcal</h1>
-    <p>Recuperadas/Gastadas</p>
+    <p>{{ "FOOTER" | translate }}</p>
   </footer>
 
 </ion-content>

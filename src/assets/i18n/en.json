@@ -1,0 +1,17 @@
+{
+  "ADDBEERTITLE": "Add beer",
+  "NAMEBEER": "Name of the beer",
+  "VOLUME": "Volume",
+  "ENERGYVALUE": "Energy value for volume (ml)",
+  "UPIMAGE": "Upload image",
+  "ADDBUTTON": "Add",
+
+  "BEERCATALOGTITLE": "Beer catalog",
+  "ADDBEERBUTTON": "+ Add new beer",
+
+  "DAILYSUMMARYTITLE": "Summary of the day",
+
+  "STATSTITLE": "Statistics",
+
+  "FOOTER": "Recovered/Spent"
+}

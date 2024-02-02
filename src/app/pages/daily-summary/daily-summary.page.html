@@ -6,15 +6,22 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Resumen del día</ion-title>
+        <ion-title>{{ "DAILYSUMMARYTITLE" | translate }}</ion-title>
       </ion-toolbar>
     </ion-header>
     
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <!-- <ion-title size="large">daily-summary</ion-title> -->
-      </ion-toolbar>
-    </ion-header>
+    <!-- Selector de idioma -->
+    <ion-item>
+      <ion-select
+            label="Idioma"
+            placeholder="Idioma"
+            (ionChange)="changeLanguage($event)"
+            [value]="currentLang">
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="ca">Català</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+      </ion-select>
+    </ion-item>
 
     <div class="container">
       <p>Aquí colocaremos resumen del consumo durante el ciclo/día actual.</p>
@@ -24,7 +31,7 @@
 
   <footer>
     <h1>545/2100 kcal</h1>
-    <p>Recuperadas/Gastadas</p>
+    <p>{{ "FOOTER" | translate }}</p>
   </footer>
 
 </ion-content>

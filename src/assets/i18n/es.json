@@ -1,0 +1,17 @@
+{
+  "ADDBEERTITLE": "Añadir cerveza",
+  "NAMEBEER": "Nombre de la cerveza",
+  "VOLUME": "Volumen",
+  "ENERGYVALUE": "Valor energético por volumen (ml)",
+  "UPIMAGE": "Subir imagen",
+  "ADDBUTTON": "Agregar",
+
+  "BEERCATALOGTITLE": "Catálogo de cervezas",
+  "ADDBEERBUTTON": "+ Añadir nueva cerveza",
+
+  "DAILYSUMMARYTITLE": "Resumen del día",
+
+  "STATSTITLE": "Estadísticas",
+
+  "FOOTER": "Recuperadas/Gastadas"
+}

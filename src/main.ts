@@ -1,4 +1,4 @@
-import { enableProdMode, isDevMode } from '@angular/core';
+import { enableProdMode, importProvidersFrom, isDevMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
@@ -7,10 +7,25 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { provideServiceWorker } from '@angular/service-worker';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 if (environment.production) {
   enableProdMode();
 }
+// Para el multi lenguaje (Añadido para el cambio de idioma)
+export const createTranslateLoader = (http: HttpClient) =>
+  new TranslateHttpLoader(http, './assets/i18n/', '.json');
+// Para el multi lenguaje Aqui ponemos el lenguaje por defecto de nuestra app) (Añadido para el cambio de idioma)
+export const provideTranslation = () => ({
+  defaultLanguage: 'es',
+  loader: {
+    provide: TranslateLoader,
+    useFactory: createTranslateLoader,
+    deps: [HttpClient]
+  },
+});
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -24,6 +39,12 @@ bootstrapApplication(AppComponent, {
     provideServiceWorker('ngsw-worker.js', {
         enabled: !isDevMode(),
         registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    
+    // Para el multi lenguaje (Añadido para el cambio de idioma)
+    importProvidersFrom([
+      HttpClientModule,
+      TranslateModule.forRoot(provideTranslation())
+    ])
 ],
 });

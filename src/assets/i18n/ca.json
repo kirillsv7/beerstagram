@@ -1,0 +1,17 @@
+{
+  "ADDBEERTITLE": "Afegir cervesa",
+  "NAMEBEER": "Nom de la cervesa",
+  "VOLUME": "Volumen",
+  "ENERGYVALUE": "Valor energètic per volum (ml)",
+  "UPIMAGE": "Pujar imatge",
+  "ADDBUTTON": "Afegir",
+
+  "BEERCATALOGTITLE": "Catàleg de cerveses",
+  "ADDBEERBUTTON": "+ Afegir nova cervesa",
+
+  "DAILYSUMMARYTITLE": "Resum del dia",
+
+  "STATSTITLE": "Estadístiques",
+  
+  "FOOTER": "Recuperades/Gastades"
+}

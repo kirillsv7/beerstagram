@@ -6,23 +6,30 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Añadir cerveza</ion-title>
+        <ion-title>{{ "ADDBEERTITLE" | translate }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <!-- <ion-title size="large">add-beer</ion-title> -->
-      </ion-toolbar>
-    </ion-header>
+    <!-- Selector de idioma -->
+    <ion-item>
+      <ion-select
+            label="Idioma"
+            placeholder="Idioma"
+            (ionChange)="changeLanguage($event)"
+            [value]="currentLang">
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="ca">Català</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+      </ion-select>
+    </ion-item>
 
     <div className="prueba">
-      <ion-item>
-        <ion-input type="text">Nombre de la Cerveza</ion-input>
+      <ion-item class="itemStyle">
+        <ion-input type="text">{{ "NAMEBEER" | translate }}</ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label>Volumen</ion-label>
+      <ion-item class="itemStyle">
+        <ion-label>{{ "VOLUME" | translate }}</ion-label>
         <ion-input type="number"></ion-input>
         <ion-select>
           <ion-select-option value="l">l</ion-select-option>
@@ -31,37 +38,26 @@
         </ion-select>
       </ion-item>
 
-      <ion-item>
-        <ion-label>Valor energético por volumen (ml)</ion-label>
+      <ion-item class="itemStyle">
+        <ion-label>{{ "ENERGYVALUE" | translate }}</ion-label>
         <ion-input type="number"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label>Subir imagen</ion-label>
+      <ion-item class="itemStyle">
+        <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
         <ion-input type="file"></ion-input>
       </ion-item>
+
       <div class="prueba">
-        <ion-button shape="round" type="submit">Agregar</ion-button>
+        <ion-button shape="round" type="submit">{{ "ADDBUTTON" | translate }}</ion-button>
       </div>
     </div>
 
-    <!-- <div class="container bg-blue-500 mx-4">
-      <p>Pantalla con formulario para añadir nueva cerveza.</p>
-      <p>
-        Diseño:
-        <a
-          href="https://www.figma.com/file/4tAW2txIqmRbdPBHyq02lU/Beerstagram?type=design&node-id=2-58&mode=design&t=VWPzGyJKIu9wiES1-4"
-          target="_blank"
-          >link</a
-        >
-      </p>
-      <p>545/2100 kcal Recuperadas/Gastadas</p>
-    </div> -->
   </div>
 
   <footer>
     <h1>545/2100 kcal</h1>
-    <p>Recuperadas/Gastadas</p>
+    <p>{{ "FOOTER" | translate }}</p>
   </footer>
 
 </ion-content>

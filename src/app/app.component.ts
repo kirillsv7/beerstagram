@@ -31,6 +31,9 @@ import {
 
 } from 'ionicons/icons';
 
+// Nuevas importaciones (Añadidas para el cambio de idioma)
+import { I18nService } from 'src/app/shared/services/i18n.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -64,7 +67,8 @@ export class AppComponent {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
-  constructor() {
+              // Añadido para el cambio de idioma
+  constructor(private i18nService: I18nService) {
     addIcons({
       appsOutline,
       appsSharp,
@@ -78,5 +82,7 @@ export class AppComponent {
       addSharp,
       menuOutline
     });
+     // Añadido para el cambio de idioma
+    i18nService.changeLanguage('es');
   }
 }
