@@ -12,23 +12,21 @@
 
     <!-- Selector de idioma -->
     <ion-item>
-      <ion-select
-            label="Idioma"
-            placeholder="Idioma"
-            (ionChange)="changeLanguage($event)"
-            [value]="currentLang">
+      <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
         <ion-select-option value="es">Español</ion-select-option>
         <ion-select-option value="ca">Català</ion-select-option>
         <ion-select-option value="en">English</ion-select-option>
       </ion-select>
     </ion-item>
 
-    <div className="prueba">
-      <ion-item class="itemStyle mr">
+    <div class="centrado">
+      <ion-item class="itemStyle">
         <ion-input type="text">{{ "NAMEBEER" | translate }}</ion-input>
       </ion-item>
+    </div>
 
-      <ion-item class="itemStyle mr">
+    <div class="centrado">
+      <ion-item class="itemStyle">
         <ion-label>{{ "VOLUME" | translate }}</ion-label>
         <ion-input type="number"></ion-input>
         <ion-select>
@@ -37,21 +35,28 @@
           <ion-select-option value="ml">ml</ion-select-option>
         </ion-select>
       </ion-item>
+    </div>
 
-      <ion-item class="itemStyle mr">
+    <div class="centrado">
+      <ion-item class="itemStyle">
         <ion-label>{{ "ENERGYVALUE" | translate }}</ion-label>
         <ion-input type="number"></ion-input>
       </ion-item>
+    </div>
 
-      <ion-item class="itemStyle mr">
+    <div class="centrado">
+      <ion-item class="itemStyle">
         <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
         <ion-input type="file"></ion-input>
       </ion-item>
-
-      <div class="prueba">
-        <ion-button shape="round" type="submit">{{ "ADDBUTTON" | translate }}</ion-button>
-      </div>
     </div>
+
+    <br>
+
+    <div class="centrado">
+      <ion-button shape="round" type="submit">{{ "ADDBUTTON" | translate }}</ion-button>
+    </div>
+
   </div>
 
   <footer>
