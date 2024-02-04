@@ -6,13 +6,11 @@
 
 .itemStyle {
     --background: #cfd3d1;
-    --color: #fff;
-  
+    --color: black;
+    font-weight: bold;
     --border-color: #fff;
     --border-width: 2px;
-  
     --border-radius: 6px;
-  
     --detail-icon-color: white;
     --detail-icon-opacity: 1;
     --detail-icon-font-size: 20px;
@@ -27,11 +25,14 @@
     text-align: start;
   }
 
+  .mr {
+    margin-left: 40px;
+  }
+
   .prueba {
     display: flex;
     margin: auto;
     margin-top: 20px;
-    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;

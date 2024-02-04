@@ -4,8 +4,9 @@
     min-height: 100%;
 }
 
-.mr {
-    margin-left: 40px;
+.centrado {
+    display: flex;
+    justify-content: center;
 }
 
 ion-button {

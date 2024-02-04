@@ -4,6 +4,34 @@
     min-height: 100%;
 }
 
+.mr {
+    margin-left: 40px;
+}
+
+.centrado {
+    display: flex;
+    justify-content: center;
+}
+
+ion-button {
+    --background: #E1523D;
+    text-transform: capitalize;
+}
+
+.itemStyle {
+    --background: #cfd3d1;
+    --color: black;
+    font-weight: bold;
+    --border-color: #fff;
+    --border-width: 2px;
+    --border-radius: 6px;
+    --detail-icon-color: white;
+    --detail-icon-opacity: 1;
+    --detail-icon-font-size: 20px;
+    width: 350px;
+    margin-top: 15px;
+} 
+
 footer {
     background-color: #003547;
     color: white;
