@@ -12,11 +12,7 @@
 
     <!-- Selector de idioma -->
     <ion-item>
-      <ion-select
-            label="Idioma"
-            placeholder="Idioma"
-            (ionChange)="changeLanguage($event)"
-            [value]="currentLang">
+      <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
         <ion-select-option value="es">Español</ion-select-option>
         <ion-select-option value="ca">Català</ion-select-option>
         <ion-select-option value="en">English</ion-select-option>
