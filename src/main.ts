@@ -10,6 +10,8 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 if (environment.production) {
   enableProdMode();
@@ -45,6 +47,6 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom([
       HttpClientModule,
       TranslateModule.forRoot(provideTranslation())
-    ])
+    ]), importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"testcifo2","appId":"1:1065305321895:web:ee4e8ef67c2cdb5ff78682","storageBucket":"testcifo2.appspot.com","apiKey":"AIzaSyACXm84YonghDdCzKtw5URacQbr-Is9Xak","authDomain":"testcifo2.firebaseapp.com","messagingSenderId":"1065305321895"}))), importProvidersFrom(provideFirestore(() => getFirestore()))
 ],
 });
