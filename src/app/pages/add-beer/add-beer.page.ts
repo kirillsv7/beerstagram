@@ -61,7 +61,8 @@ export class AddBeerPage implements OnInit {
         beerName: [cerveza.beerName, Validators.required],
         beerVolume: [cerveza.beerVolume, Validators.required],
         beerVolumeUnit: [cerveza.beerVolumeUnit, Validators.required],
-        beerEnergyValue: [cerveza.beerEnergyValue, Validators.required]
+        beerEnergyValue: [cerveza.beerEnergyValue, Validators.required],
+        image: [cerveza.image]
       });
     }
     addCerveza(){
