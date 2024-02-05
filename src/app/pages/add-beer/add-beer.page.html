@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
   <div class="content-wrapper">
 
     <ion-header [translucent]="true">
@@ -10,7 +10,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <!-- Selector de idioma -->
+    //Selector de idioma 
     <ion-item>
       <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
         <ion-select-option value="es">Español</ion-select-option>
@@ -64,4 +64,80 @@
     <p>{{ "FOOTER" | translate }}</p>
   </footer>
 
+</ion-content> -->
+
+<ion-content [fullscreen]="true">
+  <div class="content-wrapper">
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ "ADDBEERTITLE" | translate }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <!-- Selector de idioma -->
+    <ion-item>
+      <ion-select
+        label="Idioma"
+        placeholder="Idioma"
+        (ionChange)="changeLanguage($event)"
+        [value]="currentLang"
+      >
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="ca">Català</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <form [formGroup]="cervezaForm" (ngSubmit)="addCerveza()">
+      <div class="centrado">
+        <ion-item class="itemStyle">
+          <ion-label>{{ "NAMEBEER" | translate }}</ion-label>
+          <ion-input type="text" formControlName="beerName"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="centrado">
+        <ion-item class="itemStyle">
+          <ion-label>{{ "VOLUME" | translate }}</ion-label>
+          <ion-input type="number" formControlName="beerVolume"></ion-input>
+          <ion-select formControlName="beerVolumeUnit">
+            <ion-select-option value="l">l</ion-select-option>
+            <ion-select-option value="cl">cl</ion-select-option>
+            <ion-select-option value="ml">ml</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div class="centrado">
+        <ion-item class="itemStyle">
+          <ion-label>{{ "ENERGYVALUE" | translate }}</ion-label>
+          <ion-input
+            type="number"
+            formControlName="beerEnergyValue"
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="centrado">
+        <ion-item class="itemStyle">
+          <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
+          <!-- Aquí puedes agregar tu lógica para manejar la carga de imágenes -->
+        </ion-item>
+      </div>
+
+      <br />
+
+      <div class="centrado">
+        <ion-button shape="round" type="submit">{{ buttonText }}</ion-button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <h1>545/2100 kcal</h1>
+    <p>{{ "FOOTER" | translate }}</p>
+  </footer>
 </ion-content>
