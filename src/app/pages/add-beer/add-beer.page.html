@@ -13,6 +13,7 @@
     //Selector de idioma 
     <ion-item>
       <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
+      <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
         <ion-select-option value="es">Español</ion-select-option>
         <ion-select-option value="ca">Català</ion-select-option>
         <ion-select-option value="en">English</ion-select-option>
@@ -21,10 +22,15 @@
 
     <div class="centrado">
       <ion-item class="itemStyle">
+    <div class="centrado">
+      <ion-item class="itemStyle">
         <ion-input type="text">{{ "NAMEBEER" | translate }}</ion-input>
       </ion-item>
     </div>
+    </div>
 
+    <div class="centrado">
+      <ion-item class="itemStyle">
     <div class="centrado">
       <ion-item class="itemStyle">
         <ion-label>{{ "VOLUME" | translate }}</ion-label>
@@ -36,14 +42,20 @@
         </ion-select>
       </ion-item>
     </div>
+    </div>
 
+    <div class="centrado">
+      <ion-item class="itemStyle">
     <div class="centrado">
       <ion-item class="itemStyle">
         <ion-label>{{ "ENERGYVALUE" | translate }}</ion-label>
         <ion-input type="number"></ion-input>
       </ion-item>
     </div>
+    </div>
 
+    <div class="centrado">
+      <ion-item class="itemStyle">
     <div class="centrado">
       <ion-item class="itemStyle">
         <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
@@ -52,10 +64,16 @@
     </div>
 
     <br>
+    </div>
+
+    <br>
 
     <div class="centrado">
       <ion-button shape="round" type="submit">{{ "ADDBUTTON" | translate }}</ion-button>
+    <div class="centrado">
+      <ion-button shape="round" type="submit">{{ "ADDBUTTON" | translate }}</ion-button>
     </div>
+
 
   </div>
 

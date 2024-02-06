@@ -9,14 +9,10 @@
         <ion-title>{{ "DAILYSUMMARYTITLE" | translate }}</ion-title>
       </ion-toolbar>
     </ion-header>
-    
+
     <!-- Selector de idioma -->
     <ion-item>
-      <ion-select
-            label="Idioma"
-            placeholder="Idioma"
-            (ionChange)="changeLanguage($event)"
-            [value]="currentLang">
+      <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
         <ion-select-option value="es">Español</ion-select-option>
         <ion-select-option value="ca">Català</ion-select-option>
         <ion-select-option value="en">English</ion-select-option>
@@ -41,6 +37,17 @@
       <h1>{{ "BEERSTODAY" | translate }}</h1>
     </div>
 
+    <div class="centrado">
+      <h1>{{ "BEERSTODAY" | translate }}</h1>
+    </div>
+
+    <div class="centrado">
+      <p>{{ "ITEM1" | translate }}</p>
+    </div>
+
+    <div class="centrado">
+      <p>{{ "ITEM2" | translate }}</p>
+    </div>
     <div class="centrado">
       <p>{{ "ITEM1" | translate }}</p>
     </div>
