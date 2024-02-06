@@ -1,7 +1,6 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
 import { Cerveza } from 'src/app/model/cerveza';
 import { CervezaService } from 'src/app/shared/services/cerveza.service';
 import { Router } from '@angular/router';
@@ -17,7 +16,7 @@ import { I18nService } from 'src/app/shared/services/i18n.service';
   templateUrl: './add-beer.page.html',
   styleUrls: ['./add-beer.page.scss'],
   standalone: true,
-  imports: [IonicModule,CommonModule, FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption, TranslateModule,ReactiveFormsModule ]
+  imports: [CommonModule, FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption, TranslateModule,ReactiveFormsModule ]
 })
 export class AddBeerPage implements OnInit {
 
@@ -25,6 +24,7 @@ export class AddBeerPage implements OnInit {
 
   cervezaForm!: FormGroup;
   buttonText: string = '';
+  currentLang: string = '';
 
   constructor(
     private i18nService: I18nService,
@@ -46,16 +46,23 @@ export class AddBeerPage implements OnInit {
     if (this.id) {
       this.cervezaService.getCervezaById(this.id).subscribe((data) => {
         const cerveza: Cerveza = data;
-        this.buttonText = 'Actualizar';
         this.initForm(cerveza);
-        });
-
-      }else{
-        this.buttonText = 'Añadir';
-        this.initForm();
-      }
-     
+      });
+    } else {
+      this.initForm();
     }
+    this.setButtonText();
+     
+   }
+
+    setButtonText() {
+      if (this.id) {
+        this.buttonText = this.translateService.instant("UPDATEBUTTON") ;
+      } else {
+        this.buttonText = this.translateService.instant("ADDBUTTON") ;
+      }
+    }
+
     initForm(cerveza:Cerveza={} as Cerveza){
       this.cervezaForm = this.formBuilder.group({
         beerName: [cerveza.beerName, Validators.required],
@@ -93,6 +100,9 @@ export class AddBeerPage implements OnInit {
     changeLanguage(event: CustomEvent) {
       console.log("event", event.detail.value);
       this.i18nService.changeLanguage(event.detail.value);
+      setTimeout(() => {
+        this.setButtonText();
+      }, 200);
     }
 
 }

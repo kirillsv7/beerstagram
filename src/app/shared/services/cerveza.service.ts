@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData, updateDoc } from '@angular/fire/firestore';
-import { image } from 'ionicons/icons';
 import { Observable } from 'rxjs';
 import { Cerveza} from 'src/app/model/cerveza';
 
