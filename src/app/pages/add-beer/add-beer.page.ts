@@ -6,7 +6,7 @@ import { CervezaService } from 'src/app/shared/services/cerveza.service';
 import { Router } from '@angular/router';
 import { menuOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
-import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel,IonSelect, IonSelectOption } from '@ionic/angular/standalone';
+import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel,IonSelect, IonSelectOption, IonIcon } from '@ionic/angular/standalone';
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nService } from 'src/app/shared/services/i18n.service';
@@ -16,7 +16,7 @@ import { I18nService } from 'src/app/shared/services/i18n.service';
   templateUrl: './add-beer.page.html',
   styleUrls: ['./add-beer.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption, TranslateModule,ReactiveFormsModule ]
+  imports: [IonIcon, CommonModule, FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption, TranslateModule,ReactiveFormsModule ]
 })
 export class AddBeerPage implements OnInit {
 

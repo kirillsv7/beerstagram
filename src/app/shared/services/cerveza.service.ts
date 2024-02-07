@@ -3,6 +3,7 @@ import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, docData,
 import { Observable } from 'rxjs';
 import { Cerveza} from 'src/app/model/cerveza';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,10 +11,11 @@ export class CervezaService {
 
   constructor(
     private firestore: Firestore,
+   /*  private dailyConsumption: Cerveza[] = []; */
    /*  private auth:Auth */) { }
 
 getCerveza(): Observable<Cerveza[]> {
-  const cervezaRef = collection(this.firestore, 'cervezas');
+  const cervezaRef = collection(this.firestore, 'cerveza');
   return collectionData(cervezaRef, { idField: 'id' }) as Observable<Cerveza[]>;
 }
 
@@ -43,3 +45,11 @@ getCervezaById(id: string): Observable<Cerveza> {
 }
 
 }
+
+/* addBeerToDailyConsumption(beer: Cerveza) {
+  this.dailyConsumption.push(beer);
+}
+
+getDailyConsumption() {
+  return this.dailyConsumption;
+} */
