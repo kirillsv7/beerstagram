@@ -9,6 +9,9 @@
 
   "BEERCATALOGTITLE": "Beer catalog",
   "ADDBEERBUTTON": "+ Add new beer",
+  "VALUEENERGY": "Energy value",
+  "IMAGE": "Image",
+  "DELETE": "Delete",
 
   "DAILYSUMMARYTITLE": "Summary of the day",
   "KCALWORN": "Kcal worn today",
