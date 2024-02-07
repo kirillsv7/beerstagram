@@ -9,6 +9,9 @@
 
   "BEERCATALOGTITLE": "Catàleg de cerveses",
   "ADDBEERBUTTON": "+ Afegir nova cervesa",
+  "VALUEENERGY": "Valor energètic",
+  "IMAGE": "Imatge",
+  "DELETE": "Eliminar",
 
   "DAILYSUMMARYTITLE": "Resum del dia",
   "KCALWORN": "Kcal gastades avui",
