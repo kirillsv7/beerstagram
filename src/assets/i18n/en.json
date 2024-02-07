@@ -5,9 +5,13 @@
   "ENERGYVALUE": "Energy value for volume (ml)",
   "UPIMAGE": "Upload image",
   "ADDBUTTON": "Add",
+  "UPDATEBUTTON": "Update",
 
   "BEERCATALOGTITLE": "Beer catalog",
   "ADDBEERBUTTON": "+ Add new beer",
+  "VALUEENERGY": "Energy value",
+  "IMAGE": "Image",
+  "DELETE": "Delete",
 
   "DAILYSUMMARYTITLE": "Summary of the day",
   "KCALWORN": "Kcal worn today",

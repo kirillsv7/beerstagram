@@ -5,9 +5,13 @@
   "ENERGYVALUE": "Valor energètic per volum (ml)",
   "UPIMAGE": "Pujar imatge",
   "ADDBUTTON": "Afegir",
+  "UPDATEBUTTON": "Actualitzar",
 
   "BEERCATALOGTITLE": "Catàleg de cerveses",
   "ADDBEERBUTTON": "+ Afegir nova cervesa",
+  "VALUEENERGY": "Valor energètic",
+  "IMAGE": "Imatge",
+  "DELETE": "Eliminar",
 
   "DAILYSUMMARYTITLE": "Resum del dia",
   "KCALWORN": "Kcal gastades avui",
