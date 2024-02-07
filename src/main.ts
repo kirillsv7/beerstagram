@@ -2,6 +2,8 @@ import { enableProdMode, importProvidersFrom, isDevMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
+// Nueva importacion
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
@@ -16,6 +18,10 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 if (environment.production) {
   enableProdMode();
 }
+
+// Call the element loader before the bootstrapModule/bootstrapApplication call
+defineCustomElements(window);
+
 // Para el multi lenguaje (Añadido para el cambio de idioma)
 export const createTranslateLoader = (http: HttpClient) =>
   new TranslateHttpLoader(http, './assets/i18n/', '.json');

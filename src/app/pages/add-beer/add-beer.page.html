@@ -145,14 +145,30 @@
           <ion-input type="file"></ion-input>
         </ion-item>
       </div>
-     
       <br />
 
       <div class="centrado">
         <ion-button shape="round" type="submit">{{ buttonText }}</ion-button>
       </div>
     </form>
+
   </div>
+
+  <!-- Galeria fotos -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+        <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Boton camara -->
+  <ion-fab vertical="bottom" horizontal="center">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
   <footer>
     <h1>545/2100 kcal</h1>
