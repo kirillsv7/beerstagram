@@ -12,6 +12,7 @@ import { NavController } from '@ionic/angular';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nService } from 'src/app/shared/services/i18n.service';
 import { Cerveza } from 'src/app/model/cerveza';
+import { ConsumoDiarioService } from 'src/app/shared/services/consumo-diario.service';
 
 @Component({
   selector: 'app-beer-catalog',
@@ -29,6 +30,7 @@ export class BeerCatalogPage implements OnInit {
     private router: Router,
     private cervezaService: CervezaService,
     private navCtrl: NavController,
+    private consumoDiarioService:ConsumoDiarioService,
     
     // Añadido para el cambio de idioma
     private i18nService: I18nService,
@@ -88,6 +90,15 @@ ionViewWillUnload(): any {
   updateCerveza(cerveza: Cerveza) {
     this.router.navigate([`/add-beer/${cerveza.id}`]);
   }
+  setResumen(cerveza: Cerveza){
+    const consumoDiario={
+      fecha: new Date().toISOString().split('T')[0],
+      cervezas:[cerveza]
+    }
+   this.consumoDiarioService.agregarCerveza(consumoDiario.fecha, cerveza);
+    
+  }
+
   eliminarCerveza(cerveza: Cerveza) {
     this.cervezaService.deleteCerveza(cerveza).then(() => {
       console.log('Cerveza eliminada con éxito');

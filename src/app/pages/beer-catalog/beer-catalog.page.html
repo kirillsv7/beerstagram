@@ -51,17 +51,24 @@
         </ion-card-header>
 
         <ion-card-content>
-          <p> {{ "VOLUME" | translate }}: {{cerveza.beerVolume}} {{cerveza.beerVolumeUnit}}</p>
-          <p> {{ "VALUEENERGY" | translate }}: {{cerveza.beerEnergyValue}}</p>
-          <p *ngIf="cerveza.image"> {{ "ENERGYVALUE" | translate }}<br/>
-          <img [src]="cerveza.image"/></p>
+          <p>
+            {{ "VOLUME" | translate }}: {{cerveza.beerVolume}}
+            {{cerveza.beerVolumeUnit}}
+          </p>
+          <p>{{ "VALUEENERGY" | translate }}: {{cerveza.beerEnergyValue}}</p>
+          <p *ngIf="cerveza.image">
+            {{ "ENERGYVALUE" | translate }}<br/>
+          <img [src]="cerveza.image"/>
+          </p>
           <ion-icon
             (click)="updateCerveza(cerveza)"
             name="beer-outline"
           ></ion-icon>
-          <ion-button (click)="eliminarCerveza(cerveza)" shape="round"
-            > {{ "DELETE" | translate }} </ion-button
-          >
+          <ion-button (click)="eliminarCerveza(cerveza)" shape="round">
+            {{ "DELETE" | translate }}
+          </ion-button>
+          <ion-button (click)="updateCerveza(cerveza)"shape="round">Editar</ion-button>
+          <ion-button (click)="setResumen(cerveza)">test</ion-button>
         </ion-card-content>
       </ion-card>
     </div>

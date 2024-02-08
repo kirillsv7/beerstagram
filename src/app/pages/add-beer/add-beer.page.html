@@ -109,7 +109,11 @@
       </ion-select>
     </ion-item>
 
-    <form [formGroup]="cervezaForm" (ngSubmit)="addCerveza()">
+    <form
+      *ngIf="cervezaForm"
+      [formGroup]="cervezaForm"
+      (ngSubmit)="addCerveza()"
+    >
       <div class="centrado">
         <ion-item class="itemStyle">
           <ion-label>{{ "NAMEBEER" | translate }}</ion-label>
@@ -147,6 +151,7 @@
         <p *ngIf="base64"> IMAGE<br/>
           <img [src]="base64"/></p>
       </div>
+
       <br />
 
       <div class="centrado">

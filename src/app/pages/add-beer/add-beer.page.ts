@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Cerveza } from 'src/app/model/cerveza';
 import { CervezaService } from 'src/app/shared/services/cerveza.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { menuOutline,camera } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel,IonSelect, IonSelectOption, IonIcon ,IonFab ,IonFabButton ,IonImg ,IonCol ,IonRow ,IonGrid } from '@ionic/angular/standalone';
@@ -40,7 +40,8 @@ export class AddBeerPage implements OnInit {
 
     // De las ftos
     public photoService: PhotoService,
-    public actionSheetController: ActionSheetController
+    public actionSheetController: ActionSheetController,
+    private route: ActivatedRoute
     
   ) { 
     addIcons({
@@ -66,30 +67,8 @@ export class AddBeerPage implements OnInit {
       this.initForm();
     }
     this.setButtonText();
-  }
-
-    // Funcion para lo de la galeria
-    public async showActionSheet(photo: UserPhoto, position: number) {
-      const actionSheet = await this.actionSheetController.create({
-        header: 'Photos',
-        buttons: [{
-          text: 'Delete',
-          role: 'destructive',
-          icon: 'trash',
-          handler: () => {
-            this.photoService.deletePicture(photo, position);
-          }
-        }, {
-          text: 'Cancel',
-          icon: 'close',
-          role: 'cancel',
-          handler: () => {
-            // Nothing to do, action sheet is automatically closed
-            }
-        }]
-      });
-      await actionSheet.present();
-    }
+     
+   }
 
     setButtonText() {
       if (this.id) {
