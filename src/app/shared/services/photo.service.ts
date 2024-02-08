@@ -33,6 +33,14 @@ export class PhotoService {
       key: this.PHOTO_STORAGE,
       value: JSON.stringify(this.photos),
     });
+    const base64 = await this.getBase64(capturedPhoto);
+    return base64;
+  }
+
+  private async getBase64(photo: Photo) {
+    const base64Data = await this.readAsBase64(photo);
+    console.log();
+    return base64Data;
   }
 
   // Save picture to file on device

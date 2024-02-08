@@ -140,10 +140,12 @@
       </div>
 
       <div class="centrado">
-        <ion-item class="itemStyle">
+        <!-- <ion-item class="itemStyle">
           <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
           <ion-input type="file"></ion-input>
-        </ion-item>
+        </ion-item> -->
+        <p *ngIf="base64"> IMAGE<br/>
+          <img [src]="base64"/></p>
       </div>
       <br />
 

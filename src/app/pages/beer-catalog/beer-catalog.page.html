@@ -53,7 +53,8 @@
         <ion-card-content>
           <p> {{ "VOLUME" | translate }}: {{cerveza.beerVolume}} {{cerveza.beerVolumeUnit}}</p>
           <p> {{ "VALUEENERGY" | translate }}: {{cerveza.beerEnergyValue}}</p>
-          <p *ngIf="cerveza.image"> {{ "ENERGYVALUE" | translate }}: {{cerveza.image}}</p>
+          <p *ngIf="cerveza.image"> {{ "ENERGYVALUE" | translate }}<br/>
+          <img [src]="cerveza.image"/></p>
           <ion-icon
             (click)="updateCerveza(cerveza)"
             name="beer-outline"

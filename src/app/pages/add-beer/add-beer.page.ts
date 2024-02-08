@@ -29,6 +29,7 @@ export class AddBeerPage implements OnInit {
   cervezaForm!: FormGroup;
   buttonText: string = '';
   currentLang: string = '';
+  base64: any = null;
 
   constructor(
     private i18nService: I18nService,
@@ -140,8 +141,10 @@ export class AddBeerPage implements OnInit {
       }, 200);
     }
 
-    addPhotoToGallery() {
-      this.photoService.addNewToGallery();
+    async addPhotoToGallery() {
+      this.base64 = await this.photoService.addNewToGallery();
+     // console.log('base64', base64);
+      this.cervezaForm.get('image')?.setValue(this.base64);
     }
 
 }
