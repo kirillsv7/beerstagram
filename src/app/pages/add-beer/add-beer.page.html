@@ -148,8 +148,10 @@
           <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
           <ion-input type="file"></ion-input>
         </ion-item> -->
-        <p *ngIf="base64"> IMAGE<br/>
-          <img [src]="base64"/></p>
+        <p *ngIf="base64">
+          IMAGE<br />
+          <img [src]="base64" />
+        </p>
       </div>
 
       <br />
@@ -158,17 +160,16 @@
         <ion-button shape="round" type="submit">{{ buttonText }}</ion-button>
       </div>
     </form>
-
   </div>
 
   <!-- Galeria fotos -->
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
         <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 
   <!-- Boton camara -->
   <ion-fab vertical="bottom" horizontal="center">
