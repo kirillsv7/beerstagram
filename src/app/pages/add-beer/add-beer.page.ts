@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Cerveza } from 'src/app/model/cerveza';
 import { CervezaService } from 'src/app/shared/services/cerveza.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { menuOutline,camera } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel,IonSelect, IonSelectOption, IonIcon ,IonFab ,IonFabButton ,IonImg ,IonCol ,IonRow ,IonGrid } from '@ionic/angular/standalone';
@@ -40,7 +40,7 @@ export class AddBeerPage implements OnInit {
     private cervezaService: CervezaService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
 
     // De las ftos
     public photoService: PhotoService,
