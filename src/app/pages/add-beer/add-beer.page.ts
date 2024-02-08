@@ -60,6 +60,9 @@ export class AddBeerPage implements OnInit {
 
     this.currentLang = this.i18nService.getCurrentLanguage();
     console.log('this.currentLang', this.currentLang);
+    this.route.params.subscribe(params => {
+      this.id = params['id']; // Access the 'id' parameter from the URL
+      console.log('Test ID:', this.id);
 
     if (this.id) {
       this.cervezaService.getCervezaById(this.id).subscribe((data) => {
@@ -70,6 +73,7 @@ export class AddBeerPage implements OnInit {
       this.initForm();
     }
     this.setButtonText();
+  });
   }
 
     // Funcion para lo de la galeria
