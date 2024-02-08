@@ -21,5 +21,10 @@ export const routes: Routes = [
   {
     path: 'add-beer',
     loadComponent: () => import('./pages/add-beer/add-beer.page').then( m => m.AddBeerPage)
+  },
+
+  {
+    path: 'add-beer/:id',
+    loadComponent: () => import('./pages/add-beer/add-beer.page').then( m => m.AddBeerPage)
   }
 ];

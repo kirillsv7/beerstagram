@@ -109,7 +109,11 @@
       </ion-select>
     </ion-item>
 
-    <form [formGroup]="cervezaForm" (ngSubmit)="addCerveza()">
+    <form
+      *ngIf="cervezaForm"
+      [formGroup]="cervezaForm"
+      (ngSubmit)="addCerveza()"
+    >
       <div class="centrado">
         <ion-item class="itemStyle">
           <ion-label>{{ "NAMEBEER" | translate }}</ion-label>
@@ -145,7 +149,7 @@
           <ion-input type="file"></ion-input>
         </ion-item>
       </div>
-     
+
       <br />
 
       <div class="centrado">

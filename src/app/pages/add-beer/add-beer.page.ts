@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Cerveza } from 'src/app/model/cerveza';
 import { CervezaService } from 'src/app/shared/services/cerveza.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { menuOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel,IonSelect, IonSelectOption, IonIcon } from '@ionic/angular/standalone';
@@ -32,6 +32,7 @@ export class AddBeerPage implements OnInit {
     private cervezaService: CervezaService,
     private formBuilder: FormBuilder,
     private router: Router,
+    private route: ActivatedRoute
     
   ) { 
     addIcons({
@@ -42,17 +43,21 @@ export class AddBeerPage implements OnInit {
   ngOnInit(): void{
     this.currentLang = this.i18nService.getCurrentLanguage();
     console.log('this.currentLang', this.currentLang);
-
-    if (this.id) {
-      this.cervezaService.getCervezaById(this.id).subscribe((data) => {
-        const cerveza: Cerveza = data;
-        this.initForm(cerveza);
-      });
-    } else {
-      this.initForm();
-    }
-    this.setButtonText();
-     
+    this.route.params.subscribe(params => {
+      this.id = params['id']; // Access the 'id' parameter from the URL
+      console.log('Test ID:', this.id);
+      if (this.id) {
+        this.cervezaService.getCervezaById(this.id).subscribe((data) => {
+          const cerveza: Cerveza = data;
+          this.initForm(cerveza);
+        });
+      } else {
+        this.initForm();
+      }
+      this.setButtonText();
+       
+    });
+    
    }
 
     setButtonText() {
