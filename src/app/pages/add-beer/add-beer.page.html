@@ -149,8 +149,9 @@
           <ion-input type="file"></ion-input>
         </ion-item> -->
         <ion-item class="itemStyle">
+          <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
           <p *ngIf="base64">
-            Imagen:<br />
+            <!-- Imagen:<br /> -->
             <img [src]="base64" />
           </p>
         </ion-item>
