@@ -88,6 +88,7 @@ ionViewWillUnload(): any {
   updateCerveza(cerveza: Cerveza) {
     this.router.navigate([`/add-beer/${cerveza.id}`]);
   }
+  
   eliminarCerveza(cerveza: Cerveza) {
     this.cervezaService.deleteCerveza(cerveza).then(() => {
       console.log('Cerveza eliminada con éxito');
