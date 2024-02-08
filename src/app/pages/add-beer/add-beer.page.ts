@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Cerveza } from 'src/app/model/cerveza';
 import { CervezaService } from 'src/app/shared/services/cerveza.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { menuOutline,camera } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel,IonSelect, IonSelectOption, IonIcon ,IonFab ,IonFabButton ,IonImg ,IonCol ,IonRow ,IonGrid } from '@ionic/angular/standalone';
@@ -20,7 +20,10 @@ import { ActionSheetController } from '@ionic/angular';
   templateUrl: './add-beer.page.html',
   styleUrls: ['./add-beer.page.scss'],
   standalone: true,
-  imports: [IonGrid, IonRow, IonCol, IonImg, IonFabButton, IonFab, IonIcon, CommonModule, FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption, TranslateModule,ReactiveFormsModule ]
+  imports: [IonGrid, IonRow, IonCol, IonImg, IonFabButton, IonFab, IonIcon, CommonModule,
+     FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, 
+     IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption, 
+     TranslateModule,ReactiveFormsModule ]
 })
 export class AddBeerPage implements OnInit {
 
@@ -37,11 +40,11 @@ export class AddBeerPage implements OnInit {
     private cervezaService: CervezaService,
     private formBuilder: FormBuilder,
     private router: Router,
+    private route: ActivatedRoute
 
     // De las ftos
     public photoService: PhotoService,
-    public actionSheetController: ActionSheetController,
-    private route: ActivatedRoute
+    public actionSheetController: ActionSheetController
     
   ) { 
     addIcons({
@@ -67,8 +70,30 @@ export class AddBeerPage implements OnInit {
       this.initForm();
     }
     this.setButtonText();
-     
-   }
+  }
+
+    // Funcion para lo de la galeria
+    public async showActionSheet(photo: UserPhoto, position: number) {
+      const actionSheet = await this.actionSheetController.create({
+        header: 'Photos',
+        buttons: [{
+          text: 'Delete',
+          role: 'destructive',
+          icon: 'trash',
+          handler: () => {
+            this.photoService.deletePicture(photo, position);
+          }
+        }, {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel',
+          handler: () => {
+            // Nothing to do, action sheet is automatically closed
+            }
+        }]
+      });
+      await actionSheet.present();
+    }
 
     setButtonText() {
       if (this.id) {
