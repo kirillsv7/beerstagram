@@ -1,4 +1,5 @@
 export interface Cerveza {
+nombre: any;
     id: string;
     beerName: string;
     beerVolume: number;

@@ -7,7 +7,8 @@ import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonM
 import { Cerveza } from 'src/app/model/cerveza';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nService } from 'src/app/shared/services/i18n.service';
-
+import { ConsumoDiarioService } from 'src/app/shared/services/consumo-diario.service';
+import { ConsumoDiario } from 'src/app/model/consumoDiario';
 @Component({
   selector: 'app-daily-summary',
   templateUrl: './daily-summary.page.html',
@@ -19,11 +20,14 @@ export class DailySummaryPage  implements OnInit{
   dailyConsumption: Cerveza[] = [];
   totalCalories = 0;
   currentLang = '';
+  consumoDiario: ConsumoDiario | null = null;
 
   constructor(
+    private consumoDiarioService: ConsumoDiarioService,
     private i18nService: I18nService,
-    private translateService: TranslateService
-   /*  private cervezaService: CervezaService, */
+    private translateService: TranslateService,
+    
+    
   ) {
     addIcons({
       menuOutline
@@ -33,9 +37,21 @@ export class DailySummaryPage  implements OnInit{
   ngOnInit() {
     this.currentLang = this.i18nService.getCurrentLanguage();
     console.log('this.currentLang', this.currentLang);
-    //manejo nuevo de agregar cerveza
-   /*  this.dailyConsumption = this.cervezaService.getDailyConsumption();
-    this.totalCalories = this.dailyConsumption.reduce((sum, beer) => sum + beer.calorias, 0); */
+    
+    this.consumoDiarioService.consumoDiario$.subscribe(consumoDiario => {
+      console.log('Consumo Diario:', consumoDiario);
+      // Actualiza la vista con los nuevos datos
+      this.consumoDiario = consumoDiario;
+    });
+  }
+  ionViewWillEnter() {
+    this.loadData();
+  }
+
+  loadData() {
+    this.consumoDiarioService.consumoDiario$.subscribe(consumoDiario => {
+      this.consumoDiario = consumoDiario;
+    });
   }
   
     // Función para el cambio de idioma (Añadido para el cambio de idioma)
@@ -43,5 +59,7 @@ export class DailySummaryPage  implements OnInit{
       console.log("event", event.detail.value);
       this.i18nService.changeLanguage(event.detail.value);
     }
-
+    get totalEnergyValue() {
+      return this.consumoDiario?.cervezas.reduce((sum, cerveza) => sum + cerveza.beerEnergyValue, 0);
+    }
 }

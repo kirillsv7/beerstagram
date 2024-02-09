@@ -1,6 +1,5 @@
 <ion-content [fullscreen]="true">
   <div class="content-wrapper">
-
     <ion-header [translucent]="true">
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -12,25 +11,32 @@
 
     <!-- Selector de idioma -->
     <ion-item>
-      <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
+      <ion-select
+        label="Idioma"
+        placeholder="Idioma"
+        (ionChange)="changeLanguage($event)"
+        [value]="currentLang"
+      >
         <ion-select-option value="es">Español</ion-select-option>
         <ion-select-option value="ca">Català</ion-select-option>
         <ion-select-option value="en">English</ion-select-option>
       </ion-select>
     </ion-item>
 
-    <br>
+    <br />
 
     <div class="centrado">
       <ion-item class="itemStyle">
         <ion-input type="text">{{ "KCALWORN" | translate }}</ion-input>
-      </ion-item>  
+      </ion-item>
     </div>
-    
-    <br>
+
+    <br />
 
     <div class="centrado">
-      <ion-button shape="round" type="submit">{{ "ADDKCALBUTTON" | translate }}</ion-button>
+      <ion-button shape="round" type="submit"
+        >{{ "ADDKCALBUTTON" | translate }}</ion-button
+      >
     </div>
 
     <div class="centrado">
@@ -55,12 +61,22 @@
     <div class="centrado">
       <ion-button shape="round">{{ "THELASTBUTTON" | translate }}</ion-button>
     </div>
-    
+  </div>
+  <!-- recuperando datos del dia prueba  -->
+  <div>
+    <h1>prueba de recibir datos</h1>
+    <p>Fecha: {{ consumoDiario?.fecha }}</p>
+
+    <ul>
+      <li *ngFor="let cerveza of consumoDiario?.cervezas">
+        {{ cerveza.beerName }}:{{ cerveza.beerEnergyValue }} kcal
+      </li>
+    </ul>
+    <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
   </div>
 
   <footer>
     <h1>545/2100 kcal</h1>
     <p>{{ "FOOTER" | translate }}</p>
   </footer>
-
 </ion-content>
