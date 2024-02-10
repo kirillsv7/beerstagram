@@ -45,14 +45,11 @@ export class DailySummaryPage  implements OnInit{
     });
   }
   ionViewWillEnter() {
-    this.loadData();
-  }
+  
+    }
+  
 
-  loadData() {
-    this.consumoDiarioService.consumoDiario$.subscribe(consumoDiario => {
-      this.consumoDiario = consumoDiario;
-    });
-  }
+ 
   
     // Función para el cambio de idioma (Añadido para el cambio de idioma)
     changeLanguage(event: CustomEvent) {
