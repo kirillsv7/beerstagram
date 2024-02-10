@@ -140,7 +140,10 @@
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {
-            "version": 2
+            "version": 2,
+            "browserTarget": "app:build:production",
+            "serverTarget": "app:server:production",
+            "prerenderTarget": "app:prerender:production"
           },
           "configurations": {
             "production": {
