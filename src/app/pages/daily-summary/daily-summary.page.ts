@@ -69,22 +69,28 @@ export class DailySummaryPage implements OnInit {
     this.currentLang = this.i18nService.getCurrentLanguage();
     console.log('this.currentLang', this.currentLang);
     
-    /*this.consumoDiarioService.consumoDiario$.subscribe(consumoDiario => {
+    this.consumoDiarioService.consumoDiario$.subscribe(consumoDiario => {
       console.log('Consumo Diario:', consumoDiario);
       // Actualiza la vista con los nuevos datos
       this.consumoDiario = consumoDiario;
-    }); */
+    });
     
     // Obtener datos iniciales
     this.consumoService.getConsumoDiario().subscribe((consumos) => {
       this.consumos = consumos;
+      // Escuchar cambios en tiempo real
+/*      this.consumoService.consumoDiario$.subscribe((consumo) => {
+        // actualizar arreglo de consumos
+        if (consumo) {
+          this.consumos.push(consumo);
+        }
+      });*/
+
+      this.consumoDiarioService.getConsumoDiarioRes();
     });
 
-    // Escuchar cambios en tiempo real
-    this.consumoService.consumoDiario$.subscribe((consumo) => {
-      // actualizar arreglo de consumos
-      return this.consumos.push(consumo!);
-    });
+
+
   }
   ionViewWillEnter() {}
 
@@ -94,8 +100,8 @@ export class DailySummaryPage implements OnInit {
     this.i18nService.changeLanguage(event.detail.value);
   }
   get totalEnergyValue() {
-    return this.consumoDiario?.cervezas.reduce(
-      (sum, cerveza) => sum + cerveza.beerEnergyValue,
+    return this.consumoDiario?.cervezas?.reduce(
+      (sum, cerveza) => sum + (cerveza.beerEnergyValue || 0),
       0
     );
   }

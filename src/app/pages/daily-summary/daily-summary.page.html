@@ -62,7 +62,7 @@
 
     <br>
 
-    <div *ngIf="consumoDiario">
+<!--     <div *ngIf="consumoDiario">
       <h1>Consumo Diario</h1>
       <p>Fecha: {{ consumoDiario.fecha }}</p>
       <ul>
@@ -72,7 +72,7 @@
       </ul>
       <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
     </div>
-  
+ -->  
     <div class="centrado">
       <ion-list>
         <ion-item *ngFor="let consumo of consumos">
@@ -85,7 +85,10 @@
               <p>{{cerveza.beerEnergyValue}} kcal</p>
             </ion-item>
           </ion-list>
+
+
         </ion-item>
+        <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
       </ion-list>
     </div>
 
