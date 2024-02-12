@@ -25,6 +25,17 @@ export class ConsumoDiarioService {
     return collectionData(cervezaRef, { idField: 'id' }) as Observable<ConsumoDiario[]>;
   }
 
+  async getConsumoDiarioRes() {
+    const fecha = new Date().toISOString().split('T')[0];
+    const consumoDiarioRef = doc(this.firestore, `consumoDiario/${fecha}`);
+    const docSnapshot = await getDoc(consumoDiarioRef);
+    let consumoDiario = docSnapshot.data() as ConsumoDiario;
+
+    this.consumoDiarioSource.next(consumoDiario);
+  }
+
+
+
   eliminarConsumoDiario(id: string | undefined) {
     throw new Error('Method not implemented.');
   }
