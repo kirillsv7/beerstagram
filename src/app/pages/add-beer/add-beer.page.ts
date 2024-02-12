@@ -11,6 +11,7 @@ import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonM
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nService } from 'src/app/shared/services/i18n.service';
 
+// Importaciones de la galeria/fotos
 import { PhotoService, UserPhoto } from 'src/app/shared/services/photo.service';
 import { ActionSheetController } from '@ionic/angular';
 
@@ -40,6 +41,8 @@ export class AddBeerPage implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
+
+    // De las ftos
     public photoService: PhotoService,
     public actionSheetController: ActionSheetController
     
@@ -51,6 +54,8 @@ export class AddBeerPage implements OnInit {
   }
 
   ngOnInit(): void{
+
+    // Para lo de las fotos
     this.photoService.loadSaved();
 
     this.currentLang = this.i18nService.getCurrentLanguage();
