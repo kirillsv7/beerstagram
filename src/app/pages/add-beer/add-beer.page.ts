@@ -21,9 +21,9 @@ import { ActionSheetController } from '@ionic/angular';
   styleUrls: ['./add-beer.page.scss'],
   standalone: true,
   imports: [IonGrid, IonRow, IonCol, IonImg, IonFabButton, IonFab, IonIcon, CommonModule,
-     FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, 
-     IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption, 
-     TranslateModule,ReactiveFormsModule ]
+    FormsModule, IonButtons, IonButton, IonMenu, IonContent, IonHeader, IonToolbar, 
+    IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption, 
+    TranslateModule,ReactiveFormsModule ]
 })
 export class AddBeerPage implements OnInit {
 
@@ -77,27 +77,27 @@ export class AddBeerPage implements OnInit {
   }
 
     // Funcion para lo de la galeria
-    public async showActionSheet(photo: UserPhoto, position: number) {
-      const actionSheet = await this.actionSheetController.create({
-        header: 'Photos',
-        buttons: [{
-          text: 'Delete',
-          role: 'destructive',
-          icon: 'trash',
-          handler: () => {
-            this.photoService.deletePicture(photo, position);
-          }
-        }, {
-          text: 'Cancel',
-          icon: 'close',
-          role: 'cancel',
-          handler: () => {
-            // Nothing to do, action sheet is automatically closed
-            }
-        }]
-      });
-      await actionSheet.present();
-    }
+    // public async showActionSheet(photo: UserPhoto, position: number) {
+    //   const actionSheet = await this.actionSheetController.create({
+    //     header: 'Photos',
+    //     buttons: [{
+    //       text: 'Delete',
+    //       role: 'destructive',
+    //       icon: 'trash',
+    //       handler: () => {
+    //         this.photoService.deletePicture(photo, position);
+    //       }
+    //     }, {
+    //       text: 'Cancel',
+    //       icon: 'close',
+    //       role: 'cancel',
+    //       handler: () => {
+    //         // Nothing to do, action sheet is automatically closed
+    //         }
+    //     }]
+    //   });
+    //   await actionSheet.present();
+    // }
 
     setButtonText() {
       if (this.id) {
@@ -116,6 +116,7 @@ export class AddBeerPage implements OnInit {
         image: [cerveza.image]
       });
     }
+
     addCerveza(){
       const cerveza = this.cervezaForm.value as Cerveza;
       console.log(cerveza);
@@ -130,6 +131,7 @@ export class AddBeerPage implements OnInit {
         });
       }
     }
+
     deleteCerveza(){
       const cerveza = this.cervezaForm.value as Cerveza;
       if (this.id) {
@@ -140,7 +142,13 @@ export class AddBeerPage implements OnInit {
       }
     }
 
-    // Función para el cambio de idioma 
+    async addPhotoToGallery() {
+      this.base64 = await this.photoService.addNewToGallery();
+     // console.log('base64', base64);
+      this.cervezaForm.get('image')?.setValue(this.base64);
+    }
+
+     // Función para el cambio de idioma 
     changeLanguage(event: CustomEvent) {
       console.log("event", event.detail.value);
       this.i18nService.changeLanguage(event.detail.value);
@@ -148,11 +156,4 @@ export class AddBeerPage implements OnInit {
         this.setButtonText();
       }, 200);
     }
-
-    async addPhotoToGallery() {
-      this.base64 = await this.photoService.addNewToGallery();
-     // console.log('base64', base64);
-      this.cervezaForm.get('image')?.setValue(this.base64);
-    }
-
 }
