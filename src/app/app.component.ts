@@ -33,6 +33,7 @@ import {
 
 // Nuevas importaciones (Añadidas para el cambio de idioma)
 import { I18nService } from 'src/app/shared/services/i18n.service';
+import { PushService } from './shared/services/push.service';
 
 @Component({
   selector: 'app-root',
@@ -68,7 +69,8 @@ export class AppComponent {
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
               // Añadido para el cambio de idioma
-  constructor(private i18nService: I18nService) {
+  constructor(private i18nService: I18nService,
+    private pushService: PushService) {
     addIcons({
       appsOutline,
       appsSharp,
@@ -84,5 +86,9 @@ export class AppComponent {
     });
      // Añadido para el cambio de idioma
     i18nService.changeLanguage('es');
+
+    this.pushService.addListeners();
+    this.pushService.registerNotifications();
+    this.pushService.getDeliveredNotifications();
   }
 }
