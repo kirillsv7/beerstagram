@@ -5,7 +5,6 @@ import { menuOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonMenuButton, IonTitle, IonItem, IonInput, IonLabel, IonSelect, IonSelectOption } from '@ionic/angular/standalone'
 
-// Nuevas importaciones (Añadidas para el cambio de idioma)
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nService } from 'src/app/shared/services/i18n.service';
 
