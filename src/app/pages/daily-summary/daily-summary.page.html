@@ -61,7 +61,9 @@
     <div class="centrado">
       <ion-button shape="round">{{ "THELASTBUTTON" | translate }}</ion-button>
     </div>
+    
   </div>
+  
   <!-- recuperando datos del dia prueba  -->
   <!--  <div>
     <h1>prueba de recibir datos</h1>
@@ -74,6 +76,7 @@
     </ul>
     <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
   </div> -->
+
   <div *ngIf="consumoDiario">
     <h1>Consumo Diario</h1>
     <p>Fecha: {{ consumoDiario.fecha }}</p>
@@ -84,7 +87,8 @@
     </ul>
     <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
   </div>
-  <ion-content>
+
+  <!-- <ion-content> -->
     <ion-list>
       <ion-item *ngFor="let consumo of consumos">
         <h4>{{consumo.fecha}}</h4>
@@ -98,7 +102,8 @@
         </ion-list>
       </ion-item>
     </ion-list>
-  </ion-content>
+  <!-- </ion-content> -->
+
   <footer>
     <h1>545/2100 kcal</h1>
     <p>{{ "FOOTER" | translate }}</p>
