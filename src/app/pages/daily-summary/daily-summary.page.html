@@ -85,19 +85,19 @@
     <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
   </div>
   <ion-content>
-
     <ion-list>
       <ion-item *ngFor="let consumo of consumos">
-      
-        <h2>{{consumo.fecha}}</h2>
-        
-        <p *ngFor="let cerveza of consumo.cervezas">
-          {{cerveza.beerName}}
-        </p>
-        
+        <h4>{{consumo.fecha}}</h4>
+
+        <ion-list>
+          <ion-item *ngFor="let cerveza of consumo.cervezas">
+            <h6>{{cerveza.beerName}}</h6>
+            <hr />
+            <p>{{cerveza.beerEnergyValue}} kcal</p>
+          </ion-item>
+        </ion-list>
       </ion-item>
     </ion-list>
-  
   </ion-content>
   <footer>
     <h1>545/2100 kcal</h1>
