@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { menuOutline } from 'ionicons/icons';
@@ -16,7 +16,7 @@ import {
   IonInput,
   IonLabel,
   IonSelect,
-  IonSelectOption, IonList } from '@ionic/angular/standalone';
+  IonSelectOption, IonList, IonCard, NavController, IonCardContent, IonCardHeader, IonCardTitle } from '@ionic/angular/standalone';
 import { Cerveza } from 'src/app/model/cerveza';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nService } from 'src/app/shared/services/i18n.service';
@@ -27,7 +27,7 @@ import { ConsumoDiario } from 'src/app/model/consumoDiario';
   templateUrl: './daily-summary.page.html',
   styleUrls: ['./daily-summary.page.scss'],
   standalone: true,
-  imports: [IonList, 
+  imports: [IonCardTitle, IonCardHeader, IonCardContent, IonCard, IonList, 
     CommonModule,
     FormsModule,
     IonButtons,
@@ -57,6 +57,7 @@ export class DailySummaryPage implements OnInit {
   constructor(
     private consumoDiarioService: ConsumoDiarioService,
     private i18nService: I18nService,
+    private navCtrl: NavController,
     private translateService: TranslateService,
     private consumoService: ConsumoDiarioService
   ) {
@@ -78,8 +79,9 @@ export class DailySummaryPage implements OnInit {
     // Obtener datos iniciales
     this.consumoService.getConsumoDiario().subscribe((consumos) => {
       this.consumos = consumos;
+      
       // Escuchar cambios en tiempo real
-/*      this.consumoService.consumoDiario$.subscribe((consumo) => {
+      /*this.consumoService.consumoDiario$.subscribe((consumo) => {
         // actualizar arreglo de consumos
         if (consumo) {
           this.consumos.push(consumo);
@@ -88,11 +90,13 @@ export class DailySummaryPage implements OnInit {
 
       this.consumoDiarioService.getConsumoDiarioRes();
     });
-
-
-
   }
+
   ionViewWillEnter() {}
+
+  navegarAPagina() {
+    this.navCtrl.navigateForward('/beer-catalog');
+  }
 
   // Función para el cambio de idioma (Añadido para el cambio de idioma)
   changeLanguage(event: CustomEvent) {

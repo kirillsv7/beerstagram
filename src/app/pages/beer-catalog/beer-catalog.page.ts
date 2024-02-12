@@ -52,27 +52,25 @@ export class BeerCatalogPage implements OnInit {
     }
     );
   }
-ionViewDidLoad(): any {
-  console.log('ionViewDidLoad');
-}
+  ionViewDidLoad(): any {
+    console.log('ionViewDidLoad');
+  }
 
-ionViewDidEnter(): any {
-  console.log('ionViewDidEnter');
-}
+  ionViewDidEnter(): any {
+    console.log('ionViewDidEnter');
+  }
 
-ionViewWillLeave(): any {
-  console.log('ionViewWillLeave');
-}
+  ionViewWillLeave(): any {
+    console.log('ionViewWillLeave');
+  }
 
-ionViewDidLeave(): any {
-  console.log('ionViewDidLeave');
-}
+  ionViewDidLeave(): any {
+    console.log('ionViewDidLeave');
+  }
 
-ionViewWillUnload(): any {
-  console.log('ionViewWillUnload');
-}
-
-
+  ionViewWillUnload(): any {
+    console.log('ionViewWillUnload');
+  }
   
   logCerveza(cerveza: Cerveza) {
     console.log(cerveza);
@@ -105,10 +103,6 @@ ionViewWillUnload(): any {
   navegarAPagina() {
     this.navCtrl.navigateForward('/add-beer');
   }
-  
-  /*  addToDailyConsumption(beer: Cerveza) {
-    this.cervezaService.addBeerToDailyConsumption(beer);
-  } */
 
   // Función para el cambio de idioma
   changeLanguage(event: CustomEvent) {

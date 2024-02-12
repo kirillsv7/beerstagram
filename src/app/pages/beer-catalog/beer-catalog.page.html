@@ -23,24 +23,8 @@
       </ion-select>
     </ion-item>
 
-    <br />
+    <br>
 
-    <!-- Por ahora lo pongo con una imagen cambiarlo por una tabla-->
-    <!-- <div class="centrado">
-      <img class="image" src="assets/img/cervezas.png" alt="cervezas" />
-    </div> -->
-    <!-- <div>
-      <ul>
-        <li *ngFor="let cerveza of cerveza" (click)="logCerveza(cerveza)">
-          {{cerveza.beerName}}
-          <ion-icon
-            (click)="updateCerveza(cerveza)"
-            name="create-outline"
-          ></ion-icon>
-        </li>
-      </ul>
-    </div> -->
-    <br />
     <!-- Tarjetas de cerveza -->
     <div *ngFor="let cerveza of cerveza">
       <ion-card>
@@ -67,7 +51,9 @@
           <ion-button (click)="updateCerveza(cerveza)" shape="round"
             >{{ "EDIT" | translate }} &#8680; <ion-icon name="beer-outline"></ion-icon
           ></ion-button>
-          <ion-button (click)="setResumen(cerveza)">+</ion-button>
+          <ion-button (click)="setResumen(cerveza)" shape="round">
+            + {{ "ADDTOPAGE" | translate }}
+          </ion-button>
         </ion-card-content>
       </ion-card>
     </div>

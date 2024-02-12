@@ -23,91 +23,42 @@
       </ion-select>
     </ion-item>
 
-    <br />
-
-    <div class="centrado">
-      <ion-item class="itemStyle">
-        <ion-input type="text">{{ "KCALWORN" | translate }}</ion-input>
-      </ion-item>
-    </div>
-
-    <br />
-
-    <div class="centrado">
-      <ion-button shape="round" type="submit">{{ "ADDKCALBUTTON" | translate }}</ion-button>
-    </div>
-
-    <div class="centrado">
-      <h1>{{ "BEERSTODAY" | translate }}</h1>
-    </div>
-
-    <div class="centrado">
-      <p>{{ "ITEM1" | translate }}</p>
-    </div>
-
-    <div class="centrado">
-      <p>{{ "ITEM2" | translate }}</p>
-    </div>
-    <div class="centrado">
-      <p>{{ "ITEM1" | translate }}</p>
-    </div>
-
-    <div class="centrado">
-      <p>{{ "ITEM2" | translate }}</p>
-    </div>
-
-    <div class="centrado">
-      <ion-button shape="round">{{ "THELASTBUTTON" | translate }}</ion-button>
-    </div>
-
     <br>
 
-<!--     <div *ngIf="consumoDiario">
-      <h1>Consumo Diario</h1>
-      <p>Fecha: {{ consumoDiario.fecha }}</p>
-      <ul>
-        <li *ngFor="let cerveza of consumoDiario.cervezas">
-          {{ cerveza.beerName }}: {{ cerveza.beerEnergyValue }} kcal
-        </li>
-      </ul>
-      <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
-    </div>
- -->  
     <div class="centrado">
       <ion-list>
-        <ion-item *ngFor="let consumo of consumos">
-          <h4>{{consumo.fecha}}</h4>
-  
-          <ion-list>
-            <ion-item *ngFor="let cerveza of consumo.cervezas">
-              <h6>{{cerveza.beerName}}</h6>
-              <hr />
-              <p>{{cerveza.beerEnergyValue}} kcal</p>
+        <ion-card>
+          <ion-card-content>
+            <ion-item *ngFor="let consumo of consumos">
+              <ion-card-header>
+                <ion-card-title>
+                  <h4>{{consumo.fecha}} &#8680; </h4>
+                </ion-card-title>
+              </ion-card-header>
+                <ion-item *ngFor="let cerveza of consumo.cervezas">
+                  <h6>{{cerveza.beerName}} &nbsp; </h6>
+                  <hr />
+                  <p> {{cerveza.beerEnergyValue}} kcal</p>
+                </ion-item>
             </ion-item>
-          </ion-list>
-
-
-        </ion-item>
-        <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
+        </ion-card-content>
+        </ion-card>
+        
+        <div class="centrado">
+          <p> {{ "TOTALKCAL" | translate }} &#8680; {{ totalEnergyValue }} kcal</p>
+        </div>
       </ion-list>
     </div>
 
     <br>
 
+    <div class="centrado">
+      <ion-button (click)="navegarAPagina()" shape="round">{{ "THELASTBUTTON" | translate }}</ion-button>
+    </div>
+
+    <br>
+
   </div>
-
-  <!-- recuperando datos del dia prueba  -->
-  <!--  <div>
-    <h1>prueba de recibir datos</h1>
-    <p>Fecha: {{ consumoDiario?.fecha }}</p>
-
-    <ul>
-      <li *ngFor="let cerveza of consumoDiario?.cervezas">
-        {{ cerveza.beerName }}:{{ cerveza.beerEnergyValue }} kcal
-      </li>
-    </ul>
-    <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
-  </div> -->
   
   <footer>
     <h1>545/2100 kcal</h1>

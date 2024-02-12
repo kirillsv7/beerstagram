@@ -1,89 +1,3 @@
-<!-- <ion-content [fullscreen]="true">
-  <div class="content-wrapper">
-
-    <ion-header [translucent]="true">
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>{{ "ADDBEERTITLE" | translate }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    //Selector de idioma 
-    <ion-item>
-      <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
-      <ion-select label="Idioma" placeholder="Idioma" (ionChange)="changeLanguage($event)" [value]="currentLang">
-        <ion-select-option value="es">Español</ion-select-option>
-        <ion-select-option value="ca">Català</ion-select-option>
-        <ion-select-option value="en">English</ion-select-option>
-      </ion-select>
-    </ion-item>
-
-    <div class="centrado">
-      <ion-item class="itemStyle">
-    <div class="centrado">
-      <ion-item class="itemStyle">
-        <ion-input type="text">{{ "NAMEBEER" | translate }}</ion-input>
-      </ion-item>
-    </div>
-    </div>
-
-    <div class="centrado">
-      <ion-item class="itemStyle">
-    <div class="centrado">
-      <ion-item class="itemStyle">
-        <ion-label>{{ "VOLUME" | translate }}</ion-label>
-        <ion-input type="number"></ion-input>
-        <ion-select>
-          <ion-select-option value="l">l</ion-select-option>
-          <ion-select-option value="cl">cl</ion-select-option>
-          <ion-select-option value="ml">ml</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </div>
-    </div>
-
-    <div class="centrado">
-      <ion-item class="itemStyle">
-    <div class="centrado">
-      <ion-item class="itemStyle">
-        <ion-label>{{ "ENERGYVALUE" | translate }}</ion-label>
-        <ion-input type="number"></ion-input>
-      </ion-item>
-    </div>
-    </div>
-
-    <div class="centrado">
-      <ion-item class="itemStyle">
-    <div class="centrado">
-      <ion-item class="itemStyle">
-        <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
-        <ion-input type="file"></ion-input>
-      </ion-item>
-    </div>
-
-    <br>
-    </div>
-
-    <br>
-
-    <div class="centrado">
-      <ion-button shape="round" type="submit">{{ "ADDBUTTON" | translate }}</ion-button>
-    <div class="centrado">
-      <ion-button shape="round" type="submit">{{ "ADDBUTTON" | translate }}</ion-button>
-    </div>
-
-
-  </div>
-
-  <footer>
-    <h1>545/2100 kcal</h1>
-    <p>{{ "FOOTER" | translate }}</p>
-  </footer>
-
-</ion-content> -->
-
 <ion-content [fullscreen]="true">
   <div class="content-wrapper">
     <ion-header [translucent]="true">
@@ -144,14 +58,9 @@
       </div>
 
       <div class="centrado">
-        <!-- <ion-item class="itemStyle">
-          <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
-          <ion-input type="file"></ion-input>
-        </ion-item> -->
         <ion-item class="itemStyle">
           <ion-label>{{ "UPIMAGE" | translate }}</ion-label>
           <p *ngIf="base64">
-            <!-- Imagen:<br /> -->
             <img [src]="base64" />
           </p>
         </ion-item>
@@ -163,18 +72,9 @@
         <ion-button shape="round" type="submit">{{ buttonText }}</ion-button>
       </div>
     </form>
+    
   </div>
 
-  <!-- Galeria fotos -->
-  <!-- <ion-grid>
-    <ion-row>
-      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
-
-  <!-- Boton camara -->
   <ion-fab vertical="bottom" horizontal="center">
     <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>

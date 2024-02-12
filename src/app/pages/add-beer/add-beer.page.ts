@@ -11,8 +11,7 @@ import { IonButton, IonButtons, IonMenu, IonContent, IonHeader, IonToolbar, IonM
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nService } from 'src/app/shared/services/i18n.service';
 
-// Importaciones de la galeria/fotos
-import { PhotoService, UserPhoto } from 'src/app/shared/services/photo.service';
+import { PhotoService } from 'src/app/shared/services/photo.service';
 import { ActionSheetController } from '@ionic/angular';
 
 @Component({
@@ -41,8 +40,6 @@ export class AddBeerPage implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-
-    // De las ftos
     public photoService: PhotoService,
     public actionSheetController: ActionSheetController
     
@@ -54,8 +51,6 @@ export class AddBeerPage implements OnInit {
   }
 
   ngOnInit(): void{
-
-    // Para lo de las fotos
     this.photoService.loadSaved();
 
     this.currentLang = this.i18nService.getCurrentLanguage();
@@ -75,29 +70,6 @@ export class AddBeerPage implements OnInit {
     this.setButtonText();
   });
   }
-
-    // Funcion para lo de la galeria
-    // public async showActionSheet(photo: UserPhoto, position: number) {
-    //   const actionSheet = await this.actionSheetController.create({
-    //     header: 'Photos',
-    //     buttons: [{
-    //       text: 'Delete',
-    //       role: 'destructive',
-    //       icon: 'trash',
-    //       handler: () => {
-    //         this.photoService.deletePicture(photo, position);
-    //       }
-    //     }, {
-    //       text: 'Cancel',
-    //       icon: 'close',
-    //       role: 'cancel',
-    //       handler: () => {
-    //         // Nothing to do, action sheet is automatically closed
-    //         }
-    //     }]
-    //   });
-    //   await actionSheet.present();
-    // }
 
     setButtonText() {
       if (this.id) {
@@ -144,7 +116,6 @@ export class AddBeerPage implements OnInit {
 
     async addPhotoToGallery() {
       this.base64 = await this.photoService.addNewToGallery();
-     // console.log('base64', base64);
       this.cervezaForm.get('image')?.setValue(this.base64);
     }
 

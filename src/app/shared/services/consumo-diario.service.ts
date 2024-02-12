@@ -34,8 +34,6 @@ export class ConsumoDiarioService {
     this.consumoDiarioSource.next(consumoDiario);
   }
 
-
-
   eliminarConsumoDiario(id: string | undefined) {
     throw new Error('Method not implemented.');
   }

@@ -13,22 +13,12 @@
   "IMAGE": "Image",
   "DELETE": "Delete",
   "EDIT": "Edit",
+  "ADDTOPAGE":"Daily summary page",
+
 
   "DAILYSUMMARYTITLE": "Summary of the day",
-  "KCALWORN": "Kcal worn today",
-  "ADDKCALBUTTON": "Add",
-  "BEERSTODAY": "Beers drunk today",
-  "ITEM1": "1 x Franziskaner 500ml 215 kcal - 215 kcal",
-  "ITEM2": "2 x Estrella Damm 330ml 165 kcal - 330 kcal",
+  "TOTALKCAL": "Total calories recovered today",
   "THELASTBUTTON": "The last one and we leave",
-
-  "STATSTITLE": "Statistics",
-  "DAY1": "04/02/2024 545/2100 kcal",
-  "ITEM3": "1 x Heineken 500ml 215 kcal - 215 kcal",
-  "ITEM4": "2 x Alambra 330ml 165 kcal - 330 kcal",
-  "DAY2": "03/02/2024 110/1800 kcal",
-  "ITEM5": "1 x Desperados 33ml 125 kcal - 125 kcal",
-  "ITEM6": "1 x Coronita 100ml 220 kcal - 220 kcal",
 
   "FOOTER": "Recovered/Spent"
 }

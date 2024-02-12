@@ -17,10 +17,7 @@ import { Cerveza} from 'src/app/model/cerveza';
 })
 export class CervezaService {
 
-  constructor(
-    private firestore: Firestore,
-   /*  private dailyConsumption: Cerveza[] = []; */
-   /*  private auth:Auth */) { }
+  constructor( private firestore: Firestore ) {}
 
   getCerveza(): Observable<Cerveza[]> {
     const cervezaRef = collection(this.firestore, 'cerveza');
@@ -56,11 +53,3 @@ export class CervezaService {
   }
 
 }
-
-/* addBeerToDailyConsumption(beer: Cerveza) {
-  this.dailyConsumption.push(beer);
-}
-
-getDailyConsumption() {
-  return this.dailyConsumption;
-} */

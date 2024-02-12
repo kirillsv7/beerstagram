@@ -4,7 +4,7 @@
   "VOLUME": "Volumen",
   "ENERGYVALUE": "Valor energético por volumen (ml)",
   "UPIMAGE": "Subir imagen",
-  "ADDBUTTON": "Agregar",
+  "ADDBUTTON": "Añadir",
   "UPDATEBUTTON": "Actualizar",
 
   "BEERCATALOGTITLE": "Catálogo de cervezas",
@@ -13,22 +13,11 @@
   "IMAGE": "Imagen",
   "DELETE": "Eliminar",
   "EDIT": "Editar",
+  "ADDTOPAGE":"Página resumen diario",
 
   "DAILYSUMMARYTITLE": "Resumen del día",
-  "KCALWORN": "Kcal gastadas hoy",
-  "ADDKCALBUTTON": "Añadir",
-  "BEERSTODAY": "Cervezas tomadas hoy",
-  "ITEM1": "1 x Franziskaner 500ml 215 kcal - 215 kcal",
-  "ITEM2": "2 x Estrella Damm 330ml 165 kcal - 330 kcal",
+  "TOTALKCAL": "Total calorías recuperadas hoy",
   "THELASTBUTTON": "La última y nos vamos",
-
-  "STATSTITLE": "Estadísticas",
-  "DAY1": "04/02/2024 545/2100 kcal",
-  "ITEM3": "1 x Heineken 500ml 215 kcal - 215 kcal",
-  "ITEM4": "2 x Alambra 330ml 165 kcal - 330 kcal",
-  "DAY2": "03/02/2024 110/1800 kcal",
-  "ITEM5": "1 x Desperados 33ml 125 kcal - 125 kcal",
-  "ITEM6": "1 x Coronita 100ml 220 kcal - 220 kcal",
 
   "FOOTER": "Recuperadas/Gastadas"
 }
