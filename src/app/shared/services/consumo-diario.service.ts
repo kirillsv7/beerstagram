@@ -17,15 +17,21 @@ import { Cerveza } from 'src/app/model/cerveza';
   providedIn: 'root',
 })
 export class ConsumoDiarioService {
+
+  constructor(private firestore: Firestore) {}
+
+  getConsumoDiario(): Observable<ConsumoDiario[]> {
+    const cervezaRef = collection(this.firestore, 'consumoDiario');
+    return collectionData(cervezaRef, { idField: 'id' }) as Observable<ConsumoDiario[]>;
+  }
+
   eliminarConsumoDiario(id: string | undefined) {
     throw new Error('Method not implemented.');
   }
- 
+
   //para manejar los datos de consumo diario
   private consumoDiarioSource = new BehaviorSubject<ConsumoDiario | null>(null);
   consumoDiario$ = this.consumoDiarioSource.asObservable();
-
-  constructor(private firestore: Firestore) {}
 
   // Método para obtener las cervezas consumidas en un día específico
   async agregarCerveza(fecha: string, cerveza: Cerveza) {
@@ -50,12 +56,7 @@ export class ConsumoDiarioService {
     await setDoc(consumoDiarioRef, consumoDiario, { merge: true });
     this.consumoDiarioSource.next(consumoDiario);
   }
-   getConsumoDiario(): Observable<ConsumoDiario[]> {
-    const cervezaRef = collection(this.firestore, 'consumoDiario');
-    return collectionData(cervezaRef, { idField: 'id' }) as Observable<
-      ConsumoDiario[]
-    >;
-  } 
+
   async deleteConsumoDiario(consumoDiario: ConsumoDiario) {
     const consumoDiarioDocRef = doc(
       this.firestore,
@@ -63,6 +64,7 @@ export class ConsumoDiarioService {
     );
     await deleteDoc(consumoDiarioDocRef);
   }
+
   obtenerConsumoDiario(fechaActual: string): Observable<ConsumoDiario[]> {
     const consumoDiarioRef = doc(this.firestore, `consumoDiario/${fechaActual}`);
     return docData(consumoDiarioRef) as Observable<ConsumoDiario[]>;

@@ -66,14 +66,15 @@ export class DailySummaryPage implements OnInit {
   }
 
   ngOnInit() {
-    /* this.currentLang = this.i18nService.getCurrentLanguage();
+    this.currentLang = this.i18nService.getCurrentLanguage();
     console.log('this.currentLang', this.currentLang);
     
-    this.consumoDiarioService.consumoDiario$.subscribe(consumoDiario => {
+    /*this.consumoDiarioService.consumoDiario$.subscribe(consumoDiario => {
       console.log('Consumo Diario:', consumoDiario);
       // Actualiza la vista con los nuevos datos
       this.consumoDiario = consumoDiario;
     }); */
+    
     // Obtener datos iniciales
     this.consumoService.getConsumoDiario().subscribe((consumos) => {
       this.consumos = consumos;

@@ -34,9 +34,7 @@
     <br />
 
     <div class="centrado">
-      <ion-button shape="round" type="submit"
-        >{{ "ADDKCALBUTTON" | translate }}</ion-button
-      >
+      <ion-button shape="round" type="submit">{{ "ADDKCALBUTTON" | translate }}</ion-button>
     </div>
 
     <div class="centrado">
@@ -61,7 +59,40 @@
     <div class="centrado">
       <ion-button shape="round">{{ "THELASTBUTTON" | translate }}</ion-button>
     </div>
+
+    <br>
+
+    <div *ngIf="consumoDiario">
+      <h1>Consumo Diario</h1>
+      <p>Fecha: {{ consumoDiario.fecha }}</p>
+      <ul>
+        <li *ngFor="let cerveza of consumoDiario.cervezas">
+          {{ cerveza.beerName }}: {{ cerveza.beerEnergyValue }} kcal
+        </li>
+      </ul>
+      <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
+    </div>
+  
+    <div class="centrado">
+      <ion-list>
+        <ion-item *ngFor="let consumo of consumos">
+          <h4>{{consumo.fecha}}</h4>
+  
+          <ion-list>
+            <ion-item *ngFor="let cerveza of consumo.cervezas">
+              <h6>{{cerveza.beerName}}</h6>
+              <hr />
+              <p>{{cerveza.beerEnergyValue}} kcal</p>
+            </ion-item>
+          </ion-list>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <br>
+
   </div>
+
   <!-- recuperando datos del dia prueba  -->
   <!--  <div>
     <h1>prueba de recibir datos</h1>
@@ -74,31 +105,7 @@
     </ul>
     <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
   </div> -->
-  <div *ngIf="consumoDiario">
-    <h1>Consumo Diario</h1>
-    <p>Fecha: {{ consumoDiario.fecha }}</p>
-    <ul>
-      <li *ngFor="let cerveza of consumoDiario.cervezas">
-        {{ cerveza.beerName }}: {{ cerveza.beerEnergyValue }} kcal
-      </li>
-    </ul>
-    <p>Total de calorías Recuperadas: {{ totalEnergyValue }} kcal</p>
-  </div>
-  <ion-content>
-    <ion-list>
-      <ion-item *ngFor="let consumo of consumos">
-        <h4>{{consumo.fecha}}</h4>
-
-        <ion-list>
-          <ion-item *ngFor="let cerveza of consumo.cervezas">
-            <h6>{{cerveza.beerName}}</h6>
-            <br />
-            <p>{{cerveza.beerEnergyValue}} kcal</p>
-          </ion-item>
-        </ion-list>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+  
   <footer>
     <h1>545/2100 kcal</h1>
     <p>{{ "FOOTER" | translate }}</p>
